@@ -26,3 +26,7 @@ services:
       - ./verdaccio2/htpasswd:/verdaccio/htpasswd
     ports:
       - "4878:4873"
+
+volumes:
+  verdaccio:
+    driver: local
