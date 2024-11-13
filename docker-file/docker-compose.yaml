@@ -28,5 +28,7 @@ services:
       - "4878:4873"
 
 volumes:
-  verdaccio:
+  verdaccio1:
+    driver: local
+  verdaccio2:
     driver: local
