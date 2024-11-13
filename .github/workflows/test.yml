@@ -60,7 +60,7 @@ jobs:
 
       - name: Tear down containers
         run: |
-          docker-compose down  # 停止并清理容器
+          docker-compose  -f ${{ inputs.dockerComposeFile }} down  # 停止并清理容器
 
 
 
