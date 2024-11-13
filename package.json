@@ -1,0 +1,28 @@
+{
+  "name": "multi-registry-publish",
+  "version": "0.0.1-beta.1",
+  "description": "同时向多个npm私有镜像发布包",
+  "main": "index.js",
+  "bin": ".bin/multi-registry-publish.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dddddd889/multi-registry-publish.git"
+  },
+  "scripts": {},
+  "keywords": [
+    "cli",
+    "npm",
+    "publish",
+    "multiple",
+    "registries"
+	],
+  "author": "yhding <yhding9527@hotmail.com>",
+	"files": [
+		".bin",
+		"lib"
+	],
+  "license": "MIT",
+  "dependencies": {
+    "rc": "^1.2.8"
+  }
+}

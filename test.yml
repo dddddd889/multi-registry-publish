@@ -1,0 +1,66 @@
+name: Test测试publish功能
+
+on:
+  workflow_call:
+    inputs:
+      dockerComposeFile:
+        required: true
+        type: string
+
+jobs:
+  test-publish-in-docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Register Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: Install pnpm
+        run: |
+          npm install -g pnpm
+
+      - name: Install dependencies
+        run: |
+          pnpm install --frozen-lock
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Set up Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+
+      - name: Build and start containers using Docker Compose
+        run: |
+          docker-compose -f ${{ inputs.dockerComposeFile }} up -d --build  # 构建并启动容器，`-d` 表示在后台运行
+
+      - name: Install wait-for-it
+        run: sudo apt-get install -y wait-for-it
+
+      - name: Wait for services to be ready
+        run: |
+          # 等待容器完全启动，可以根据你的容器服务进行调整
+          wait-for-it  localhost:4877 -t 60
+          wait-for-it  localhost:4878 -t 60
+
+      - name: Run tests request Docker container
+        run: |
+          cd ./demo/lib1
+          cp ./.npmrc $HOME/.npmrc
+          docker ps -a
+          node -e "console.log(process.cwd())" & npm run pub
+
+      - name: Tear down containers
+        run: |
+          docker-compose down  # 停止并清理容器
+
+
+
+
+
