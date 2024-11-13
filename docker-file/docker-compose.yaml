@@ -1,0 +1,28 @@
+version: "3.0"
+
+services:
+  verdaccio_1:
+    image: verdaccio/verdaccio:5.32.2
+    container_name: verdaccio_1
+    environment:
+      - DEBUG=*
+    volumes:
+      - ./verdaccio1/storage:/verdaccio/storage
+      - ./verdaccio1/plugins:/verdaccio/plugins
+      - ./verdaccio-config.yaml:/verdaccio/conf/config.yaml
+      - ./verdaccio1/htpasswd:/verdaccio/htpasswd
+    ports:
+      - "4877:4873"
+
+  verdaccio_2:
+    image: verdaccio/verdaccio:5.32.2
+    container_name: verdaccio_2
+    environment:
+      - DEBUG=*
+    volumes:
+      - ./verdaccio2/storage:/verdaccio/storage
+      - ./verdaccio2/plugins:/verdaccio/plugins
+      - ./verdaccio-config.yaml:/verdaccio/conf/config.yaml
+      - ./verdaccio2/htpasswd:/verdaccio/htpasswd
+    ports:
+      - "4878:4873"
