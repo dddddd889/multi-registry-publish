@@ -7,9 +7,9 @@ services:
     environment:
       - DEBUG=*
     volumes:
-      - ./storage:/verdaccio/storage
       - ./htpasswd:/verdaccio/htpasswd
-      # - ./veradaccio-db:/verdaccio/storage/.verdaccio-db.json
+      - ./veradaccio-db:/verdaccio/storage/.verdaccio-db.json
+      - ./storage:/verdaccio/storage
       - ./config.yaml:/verdaccio/conf/config.yaml
     ports:
       - "4877:4873"
@@ -21,8 +21,8 @@ services:
       - DEBUG=*
     volumes:
       - ./config.yaml:/verdaccio/conf/config.yaml
+      - ./veradaccio-db:/verdaccio/storage/.verdaccio-db.json
       - ./storage:/verdaccio/storage
-      # - ./veradaccio-db:/verdaccio/storage/.verdaccio-db.json
       - ./htpasswd:/verdaccio/htpasswd
       # - ./verdaccio2/storage/:/verdaccio/storage/
       # - ./verdaccio2/plugins/:/verdaccio/plugins/
