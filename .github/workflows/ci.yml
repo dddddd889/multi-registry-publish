@@ -13,7 +13,8 @@ jobs:
       dockerComposeFile: "./docker-file/docker-compose.yaml"
 
   publish:
-    # needs: test-publish
+    needs: test-publish
+    if: success()  # 只有当 'build' 成功时，才执行该作业
     runs-on: ubuntu-latest
 
     steps:
