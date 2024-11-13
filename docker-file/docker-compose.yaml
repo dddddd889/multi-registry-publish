@@ -9,7 +9,7 @@ services:
     volumes:
       - ./htpasswd:/verdaccio/htpasswd
       - ./veradaccio-db:/verdaccio/storage/.verdaccio-db.json
-      - ./storage:/verdaccio/storage
+      - ./storage1:/verdaccio/storage
       - ./config.yaml:/verdaccio/conf/config.yaml
     ports:
       - "4877:4873"
@@ -22,7 +22,7 @@ services:
     volumes:
       - ./config.yaml:/verdaccio/conf/config.yaml
       - ./veradaccio-db:/verdaccio/storage/.verdaccio-db.json
-      - ./storage:/verdaccio/storage
+      - ./storage2:/verdaccio/storage
       - ./htpasswd:/verdaccio/htpasswd
       # - ./verdaccio2/storage/:/verdaccio/storage/
       # - ./verdaccio2/plugins/:/verdaccio/plugins/

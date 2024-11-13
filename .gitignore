@@ -2,4 +2,4 @@ node_modules
 .local
 data
 docker-file/*/
-!docker-file/storage
+!docker-file/storage*
