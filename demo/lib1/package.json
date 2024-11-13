@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pub": "../../.bin/multi-registry-publish.js"
+    "pub": "../../.bin/multi-registry-publish.js --verbose"
   },
   "keywords": [],
   "publishConfig": [
