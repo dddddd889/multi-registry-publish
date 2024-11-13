@@ -7,6 +7,7 @@ services:
     environment:
       - DEBUG=*
     volumes:
+      - ./data:/verdaccio/storage
       - ./htpasswd:/verdaccio/htpasswd
       - ./veradaccio-db:/verdaccio/storage/.verdaccio-db.json
       - ./config.yaml:/verdaccio/conf/config.yaml
@@ -19,7 +20,7 @@ services:
     environment:
       - DEBUG=*
     volumes:
-      # - ./verdaccio2:/verdaccio
+      - ./data:/verdaccio/storage
       - ./config.yaml:/verdaccio/conf/config.yaml
       - ./veradaccio-db:/verdaccio/storage/.verdaccio-db.json
       - ./htpasswd:/verdaccio/htpasswd
