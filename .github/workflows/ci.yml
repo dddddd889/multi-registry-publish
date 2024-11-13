@@ -7,10 +7,10 @@ on:
 
 jobs:
   # 暂时不管这个，登录一直失败
-  # test-publish:
-  #   uses: "./.github/workflows/test.yml"
-  #   with:
-  #     dockerComposeFile: "./docker-file/docker-compose.yaml"
+  test-publish:
+    uses: "./.github/workflows/test.yml"
+    with:
+      dockerComposeFile: "./docker-file/docker-compose.yaml"
 
   publish:
     # needs: test-publish
