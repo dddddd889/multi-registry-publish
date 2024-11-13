@@ -32,8 +32,8 @@ yarn install multi-registry-publish
 ```json5
 {
   "scripts": {
-		"pub": "multi-registry-publish"
-	}
+    "pub": "multi-registry-publish"
+  }
 }
 ```
 
