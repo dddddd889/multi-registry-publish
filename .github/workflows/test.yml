@@ -51,8 +51,6 @@ jobs:
 
       - name: Run tests request Docker container
         run: |
-          ls -al ./docker-file/verdaccio1
-          ls -al ./docker-file/verdaccio2
           cd ./demo/lib1
           cp ./.npmrc ~/.npmrc
           ls -al ~
