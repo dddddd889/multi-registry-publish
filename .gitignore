@@ -2,4 +2,5 @@ node_modules
 .local
 data
 docker-file/*/
-!docker-file/storage*
+!docker-file/storage1/.gitkeep
+!docker-file/storage2/.gitkeep
