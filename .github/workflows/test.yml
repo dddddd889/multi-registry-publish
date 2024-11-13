@@ -52,7 +52,9 @@ jobs:
       - name: Run tests request Docker container
         run: |
           cd ./demo/lib1
-          cp ./.npmrc $HOME/.npmrc
+          cp ./.npmrc ~/.npmrc
+          ls -al ~
+          cat ~/.npmrc
           docker ps -a
           node -e "console.log(process.cwd())" & npm run pub
 
