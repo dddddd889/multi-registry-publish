@@ -1,0 +1,20 @@
+{
+  "name": "lib1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pub": "../../.bin/multi-registry-publish.js"
+  },
+  "keywords": [],
+  "publishConfig": [
+    {
+      "registry": "http://localhost:4877"
+    },
+    {
+      "registry": "http://localhost:4878"
+    }
+  ],
+  "author": "",
+  "license": "ISC"
+}
