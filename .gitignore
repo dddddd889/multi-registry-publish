@@ -1,8 +1,4 @@
 node_modules
 .local
 data
-# storage/
-# docker-file/verdaccio1/plugin
-# docker-file/verdaccio2/*
-# !docker-file/verdaccio*/storage/.verdaccio-db.json
-# !docker-file/verdaccio*/storage/.verdaccio-db.json
+docker-file/**/
