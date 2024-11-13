@@ -1,0 +1,6 @@
+node_modules
+.local
+data
+docker-file/verdaccio1/*
+docker-file/verdaccio2/*
+!docker-file/verdaccio*/htpasswd
