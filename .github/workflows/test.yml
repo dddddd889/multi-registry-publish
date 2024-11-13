@@ -38,7 +38,7 @@ jobs:
 
       - name: Build and start containers using Docker Compose
         run: |
-          docker-compose -f ${{ inputs.dockerComposeFile }} up -d --build  # 构建并启动容器，`-d` 表示在后台运行
+          docker-compose -f ${{ inputs.dockerComposeFile }} up -d --build --force-recreate  # 构建并启动容器，`-d` 表示在后台运行
 
       - name: Install wait-for-it
         run: sudo apt-get install -y wait-for-it
@@ -60,9 +60,4 @@ jobs:
 
       - name: Tear down containers
         run: |
-          docker-compose  -f ${{ inputs.dockerComposeFile }} down  # 停止并清理容器
-
-
-
-
-
+          docker-compose -f ${{ inputs.dockerComposeFile }} down # 停止并清理容器
