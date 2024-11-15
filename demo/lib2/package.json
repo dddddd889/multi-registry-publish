@@ -1,8 +1,9 @@
 {
-  "name": "lib1-demo",
+  "name": "lib2-demo",
   "version": "1.0.1",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "pub": "node ../../lib/index.js --json"
   },
