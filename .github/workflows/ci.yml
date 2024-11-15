@@ -46,4 +46,5 @@ jobs:
 
       - name: Publish
         run: |
+          echo "${{steps.extract_version.outputs.npm_tag}}"
           npm publish --tag ${{steps.extract_version.outputs.npm_tag}}
