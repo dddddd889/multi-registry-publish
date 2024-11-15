@@ -14,8 +14,8 @@ runs:
   steps:
     - name: "Run tests request Docker container ${{ inputs.type }}"
       run: |
-        echo "${inputs.cdDir}"
-        cd "${inputs.cdDir}" || exit 1
+        echo "${{inputs.cdDir}}"
+        cd "${{inputs.cdDir}}" || exit 1
         cp ./.npmrc ~/.npmrc
         ls -al ~
         cat ~/.npmrc
