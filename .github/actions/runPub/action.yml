@@ -9,9 +9,6 @@ inputs:
     description: "要模拟的名称"
     required: true
     default: "cjs"
-# outputs:
-#   result:
-#     description: 'The result of the action'
 runs:
   using: "composite"
   steps:
