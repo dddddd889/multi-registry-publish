@@ -12,8 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        # node-version: [14, 16, 18, 20, 22] # 指定要测试的 Node.js 版本
-        node-version: [22] # 指定要测试的 Node.js 版本
+        node-version: [14, 16, 18, 20, 22] # 指定要测试的 Node.js 版本
 
     steps:
       - name: Checkout code
@@ -68,35 +67,6 @@ jobs:
         with:
           cdDir: ./demo/lib2
           type: esm
-      # - name: Run tests request Docker container With cjs
-      #   run: |
-      #     cd ./demo/lib1
-      #     cp ./.npmrc ~/.npmrc
-      #     ls -al ~
-      #     cat ~/.npmrc
-      #     docker ps -a
-      #     node -e "console.log(process.cwd())" & npm run pub
-      #     cd ./demo/lib2
-      #     node -e "console.log(process.cwd())" & npm run pub
-
-      # - name: Docker compose log with cjs
-      #   if: always()  # This ensures it runs regardless of success or failure
-      #   run: |
-      #     docker ps --filter "name=verdaccio" --format "{{.ID}}" | awk '{if ($1) print $1}' | xargs -I {} docker logs {}
-
-      # - name: Run tests request Docker container With esm
-      #   run: |
-      #     cd ./demo/lib2
-      #     cp ./.npmrc ~/.npmrc
-      #     ls -al ~
-      #     cat ~/.npmrc
-      #     docker ps -a
-      #     node -e "console.log(process.cwd())" & npm run pub
-
-      # - name: Docker compose log with esm
-      #   if: always()  # This ensures it runs regardless of success or failure
-      #   run: |
-      #     docker ps --filter "name=verdaccio" --format "{{.ID}}" | awk '{if ($1) print $1}' | xargs -I {} docker logs {}
 
       - name: Tear down containers
         run: |
