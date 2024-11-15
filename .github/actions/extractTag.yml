@@ -1,0 +1,31 @@
+name: "解析npm sevmer 版本中的关键词"
+description: "根据tag v0.1.1-alpha.1，发布beta,alpha,latest等关键字的tag标签"
+outputs:
+  version:
+    description: "去掉v前缀的版本"
+  npm_tag:
+    description: "需要发布的alpha,beta,latest等标签"
+runs:
+  using: "composite"
+  id: version
+  steps:
+    # Step 4: Extract version from the GitHub tag and set npm tag
+    - name: Extract version and determine npm tag
+      id: version
+      run: |
+        TAG="${GITHUB_REF#refs/tags/}"  # 获取 GitHub Tag
+        VERSION=${TAG//v/}  # 去掉 "v" 前缀，变成 0.1.1-alpha.1 格式
+        echo "Version: $VERSION"
+
+        # Check if the tag contains "alpha" or "beta"
+        if [[ "$TAG" == *"-alpha"* ]]; then
+          NPM_TAG="alpha"
+        elif [[ "$TAG" == *"-beta"* ]]; then
+          NPM_TAG="beta"
+        else
+          NPM_TAG="latest"
+        fi
+
+        echo "npm tag: $NPM_TAG"
+        echo "::set-output name=version::$VERSION"
+        echo "::set-output name=npm_tag::$NPM_TAG"
