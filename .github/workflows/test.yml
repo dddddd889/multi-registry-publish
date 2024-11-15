@@ -58,6 +58,8 @@ jobs:
           cat ~/.npmrc
           docker ps -a
           node -e "console.log(process.cwd())" & npm run pub
+          cd ./demo/lib2
+          node -e "console.log(process.cwd())" & npm run pub
       - name: Docker compose log
         if: always()  # This ensures it runs regardless of success or failure
         run: |
