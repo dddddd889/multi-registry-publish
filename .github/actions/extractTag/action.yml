@@ -14,6 +14,8 @@ outputs:
 runs:
   using: "composite"
   steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
     - name: Extract version and determine npm tag
       id: 'extract_tag'
       run: |
