@@ -63,10 +63,11 @@ jobs:
           cdDir: ./demo/lib1
           type: cjs
 
-      # - uses: ./.github/actions/runPub
-      #   with:
-      #     cdDir: ./demo/lib2
-      #     type: esm
+      - name: 'Public test lib2'
+        uses: ./.github/actions/runPub
+        with:
+          cdDir: ./demo/lib2
+          type: esm
       # - name: Run tests request Docker container With cjs
       #   run: |
       #     cd ./demo/lib1
