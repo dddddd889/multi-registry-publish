@@ -21,6 +21,12 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Extract version from tag
+        id: extract_version
+        uses: ./.github/actions/extractTag
+        with:
+          tag: ${{ github.ref }} # 传递 GitHub tag
+
       - name: Register Node.js
         uses: actions/setup-node@v3
         with:
@@ -40,4 +46,4 @@ jobs:
 
       - name: Publish
         run: |
-          npm publish
+          npm publish --tag ${{steps.extract_version.outputs.npm_tag}}
