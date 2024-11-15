@@ -12,14 +12,11 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    # - name: Extract version from tag
-    #   id: extract_version
-    #   uses: ./.github/actions/extractTag
-    #   with:
-    #     tag: ${{ github.ref }} # 传递 GitHub tag
+    - name: Extract version from tag
+      id: extract_version
+      uses: ./.github/actions/extractTag
+      with:
+        tag: ${{ github.ref }} # 传递 GitHub tag
 
     - name: "Run tests request Docker container ${{ inputs.type }}"
       run: |
