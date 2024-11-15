@@ -17,7 +17,7 @@ runs:
 
     - name: Extract version from tag
       id: extract_version
-      uses: ../extractTag
+      uses: ./.github/actions/extractTag
       with:
         tag: ${{ github.ref }} # 传递 GitHub tag
 
