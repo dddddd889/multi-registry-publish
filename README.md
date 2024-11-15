@@ -41,7 +41,11 @@ yarn install multi-registry-publish
 
 ## 支持的node版本
 
-目前仅测试了 node14+环境下可以进行正常发布。
+目前仅测试了node14+环境下可以进行正常发布。
+
+## 日志打印
+
+会生成日志文件：/data/logs/error.log、/data/logs/info.log
 
 ## 如何贡献代码
 
