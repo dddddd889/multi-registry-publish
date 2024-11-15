@@ -12,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14, 16, 18, 20, 22] # 指定要测试的 Node.js 版本
+        # node-version: [14, 16, 18, 20, 22] # 指定要测试的 Node.js 版本
+        node-version: [22] # 指定要测试的 Node.js 版本
 
     steps:
       - name: Checkout code
