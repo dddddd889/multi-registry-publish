@@ -11,7 +11,7 @@ services:
       # - ./veradaccio-db:/verdaccio/storage/.verdaccio-db.json
       - ./htpasswd:/verdaccio/htpasswd
       - ./config.yaml:/verdaccio/conf/config.yaml
-    user: "1000:1000"  # 指定容器内的用户 ID 和组 ID
+    user: "10001:10001"  # 在容器中指定用户
     ports:
       - "4877:4873"
 
@@ -29,7 +29,7 @@ services:
       # - ./verdaccio2/plugins/:/verdaccio/plugins/
       # - ./verdaccio2/conf/:/verdaccio/conf/
       # - ./verdaccio2/htpasswd:/verdaccio/htpasswd
-    user: "1000:1000"  # 指定容器内的用户 ID 和组 ID
+    user: "10001:10001"  # 在容器中指定用户
     ports:
       - "4878:4873"
 
