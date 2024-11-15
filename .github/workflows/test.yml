@@ -10,6 +10,9 @@ on:
 jobs:
   test-publish-in-docker:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14, 16, 18, 20, 22] # 指定要测试的 Node.js 版本
 
     steps:
       - name: Checkout code
@@ -18,15 +21,11 @@ jobs:
       - name: Register Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22'
-
-      - name: Install pnpm
-        run: |
-          npm install -g pnpm
+          node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
         run: |
-          pnpm install --frozen-lock
+          npm install
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
