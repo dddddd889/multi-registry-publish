@@ -32,8 +32,10 @@ runs:
         cat ~/.npmrc
         docker ps -a
         node -e "console.log(process.cwd())" & npm run pub --tag ${{steps.extract_version.outputs.npm_tag}} || exit 1
+      shell: 'bash'
 
     - name: Docker compose log with cjs
       if: always() # This ensures it runs regardless of success or failure
       run: |
         docker ps --filter "name=verdaccio" --format "{{.ID}}" | awk '{if ($1) print $1}' | xargs -I {} docker logs {}
+      shell: 'bash'
