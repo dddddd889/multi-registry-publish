@@ -19,6 +19,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Extract version from tag
+        id: extract_version
+        uses: ./.github/actions/extractTag
+        with:
+          tag: ${{ github.ref }} # 传递 GitHub tag
+
       - name: Register Node.js
         uses: actions/setup-node@v3
         with:
