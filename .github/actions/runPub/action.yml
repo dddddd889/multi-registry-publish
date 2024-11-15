@@ -15,23 +15,24 @@ runs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Extract version from tag
-      id: extract_version
-      uses: ./.github/actions/extractTag
-      with:
-        tag: ${{ github.ref }} # 传递 GitHub tag
+    # - name: Extract version from tag
+    #   id: extract_version
+    #   uses: ./.github/actions/extractTag
+    #   with:
+    #     tag: ${{ github.ref }} # 传递 GitHub tag
 
     - name: "Run tests request Docker container ${{ inputs.type }}"
       run: |
+        echo "${{inputs.cdDir}}"
         cd "${inputs.cdDir}" || exit 1
         cp ./.npmrc ~/.npmrc
         ls -al ~
         cat ~/.npmrc
         docker ps -a
-        node -e "console.log(process.cwd())" & npm run pub --tag ${{steps.extract_version.outputs.npm_tag}} || exit 1
+        node -e "console.log(process.cwd())" & npm run pub || exit 1 #  --tag ${{steps.extract_version.outputs.npm_tag}}
       shell: 'bash'
 
-    - name: Docker compose log with cjs
+    - name: "Docker compose log with  ${{ inputs.type }}"
       if: always() # This ensures it runs regardless of success or failure
       run: |
         docker ps --filter "name=verdaccio" --format "{{.ID}}" | awk '{if ($1) print $1}' | xargs -I {} docker logs {}
