@@ -18,6 +18,7 @@ runs:
       id: 'extract_tag'
       run: |
         TAG="${{ inputs.tag }}"  # 获取 GitHub Tag
+        TAG="${TAG#refs/tags/}"   # 去掉 "refs/tags/" 前缀
         VERSION=${TAG//v/}  # 去掉 "v" 前缀，变成 0.1.1-alpha.1 格式
         echo "Version: $VERSION"
 
