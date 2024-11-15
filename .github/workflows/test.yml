@@ -38,6 +38,8 @@ jobs:
 
       - name: Build and start containers using Docker Compose
         run: |
+          sudo chown -R 10001:10001 ./docker-file/storage1
+          sudo chown -R 10001:10001 ./docker-file/storage2
           docker-compose -f ${{ inputs.dockerComposeFile }} up -d --build --force-recreate  # 构建并启动容器，`-d` 表示在后台运行
 
       - name: Install wait-for-it
