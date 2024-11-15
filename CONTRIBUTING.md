@@ -39,6 +39,10 @@ npm login --registry=http://localhost:4878 # test4878 密码：test4878
 
 vscode切换到debugger菜单中，选择“调试代码”，然后运行调试。
 
+## UT
+
+借助github action能力支持了多个node版进行测试，确保发布包的稳定。
+
 ## 参考
 
 - [npm-registry-sync](https://github.com/privatenumber/npm-registry-sync)

@@ -39,6 +39,10 @@ yarn install multi-registry-publish
 
 > 注：这里的scripts脚本key最好不是hooks钩子(prepublishOnly、publish、postpublish)
 
+## 支持的node版本
+
+目前仅测试了 node14+环境下可以进行正常发布。
+
 ## 如何贡献代码
 
 [CONTRIBUTING](./CONTRIBUTING.md)
