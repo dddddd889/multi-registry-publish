@@ -32,6 +32,6 @@ runs:
         fi
 
         echo "npm tag: $NPM_TAG"
-        echo "::set-output name=version::$VERSION"
-        echo "::set-output name=npm_tag::$NPM_TAG"
+        echo "version=$VERSION >> $GITHUB_OUTPUT"
+        echo "npm_tag=$NPM_TAG >> $GITHUB_OUTPUT"
       shell: 'bash'
