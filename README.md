@@ -39,6 +39,28 @@ yarn install multi-registry-publish
 
 > 注：这里的scripts脚本key最好不是hooks钩子(prepublishOnly、publish、postpublish)
 
+### 指定publish参数
+
+- 方式1
+
+```bash
+{
+  "scripts": {
+    "pub": "multi-registry-publish --tag beta",
+  },
+}
+```
+
+- 方式2
+
+```bash
+npm run pub --tag beta
+```
+
+## 存在的问题
+
+1. 内部启用了子进程调用了`npm publish`，这样会存在多次触发publish相关钩子函数。
+
 ## 支持的node版本
 
 目前仅测试了node14+环境下可以进行正常发布。
