@@ -1,0 +1,28 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"problemMatcher": [],
+			"command": "pnpm",
+      "args": ["-r", "run", "pub:debug"],
+			"isBackground": true,
+			"options": {
+				"cwd": "${workspaceFolder}/demo/p-workspace",
+			},
+			"label": "pnpm: pub - demo/p-workspace",
+			"detail": "pnpm 在包不互相依赖的情况下并行执行命令，需要在9229、9230、9231三个端口启动debug"
+		},
+		{
+			"type": "shell",
+			"problemMatcher": [],
+			"command": "npm",
+      "args": ["run", "pub:debug", "--workspaces"],
+			"isBackground": true,
+			"options": {
+				"cwd": "${workspaceFolder}/demo/npm-workspace",
+			},
+			"label": "npm: pub - demo/npm-workspace",
+		}
+	]
+}

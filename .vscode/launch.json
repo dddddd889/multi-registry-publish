@@ -5,9 +5,46 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": "调试pnpm workspace 9231",
+			"port": 9231,
+			"request": "attach",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "node"
+		},
+		{
+			"name": "调试pnpm workspace-9230",
+			"port": 9230,
+			"request": "attach",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "node"
+		},
+		{
+			"name": "调试pnpm workspace-9229",
+			"port": 9229,
+			"request": "attach",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "node"
+		},
+		{
+			"name": "调试npm workspace",
+			"port": 9229,
+			"request": "attach",
+			// "preLaunchTask": "npm: pub - demo/npm-workspace",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "node"
+		},
+		{
 			"type": "node",
 			"request": "launch",
-			"name": "调试代码",
+			"name": "调试发布demo/lib1代码",
 			"skipFiles": [
 				"<node_internals>/**"
 			],
@@ -18,7 +55,7 @@
 		{
 			"type": "node",
 			"request": "launch",
-			"name": "test-remote-pkg-info",
+			"name": "测试获取远端包信息",
 			"skipFiles": [
 				"<node_internals>/**"
 			],

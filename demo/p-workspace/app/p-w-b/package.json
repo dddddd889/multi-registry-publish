@@ -1,0 +1,14 @@
+{
+  "name": "@app/p-w-b",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pub": "node ../../../../lib/index.js",
+    "pub:debug": "node --inspect-brk=9230 ../../../../lib/index.js",
+    "test": "echo p-w-b && pwd"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

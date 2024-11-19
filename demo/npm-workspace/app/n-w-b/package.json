@@ -1,0 +1,22 @@
+{
+  "name": "n-w-b",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "pub": "node ../../../../lib/index.js",
+    "pub:debug": "node --inspect-brk=9229 ../../../../lib/index.js",
+    "test": "echo n-w-b && pwd"
+  },
+  "keywords": [],
+  "publishConfig": [
+    {
+      "registry": "http://localhost:4877"
+    },
+    {
+      "registry": "http://localhost:4878"
+    }
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

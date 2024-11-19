@@ -1,0 +1,16 @@
+{
+  "name": "npm-workspace",
+  "version": "1.0.0",
+  "main": "index.js",
+  "workspaces": [
+    "app/n-w-a",
+    "app/n-w-b"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
