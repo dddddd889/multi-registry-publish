@@ -20,7 +20,7 @@ runs:
         ls -al ~
         cat ~/.npmrc
         docker ps -a
-        node -e "console.log(process.cwd())" & npm run pub || exit 1 #  --tag ${{steps.extract_version.outputs.npm_tag}}
+        node -e "console.log(process.cwd())" & npm publish || exit 1 #  --tag ${{steps.extract_version.outputs.npm_tag}}
       shell: 'bash'
 
     - name: "Docker compose log with  ${{ inputs.type }}"

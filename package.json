@@ -10,7 +10,9 @@
     "type": "git",
     "url": "git@github.com:dddddd889/multi-registry-publish.git"
   },
-  "scripts": {},
+  "scripts": {
+    "postinstall": "node ./scripts/addPkgPublishHooks.js"
+  },
   "keywords": [
     "cli",
     "npm",

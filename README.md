@@ -32,7 +32,8 @@ yarn install multi-registry-publish
 ```json5
 {
   "scripts": {
-    "pub": "multi-registry-publish"
+    "prepublishOnly": "multi-registry-publish",
+    "postpublish": "multi-registry-publish"
   }
 }
 ```

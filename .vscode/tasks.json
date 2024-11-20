@@ -4,6 +4,31 @@
 		{
 			"type": "shell",
 			"problemMatcher": [],
+			"command": "ls -d ./docker-file/storage*/* | xargs -I{} rm -rf {}",
+			"label": "clear 清理npm包",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false,
+				"close": true
+			}
+		},
+		{
+			"type": "shell",
+			"problemMatcher": [],
+			"command": "npm",
+      "args": ["publish"],
+			"isBackground": true,
+			"options": {
+				"cwd": "${workspaceFolder}/demo/lib1",
+			},
+			"label": "publish demo lib1",
+		},
+		{
+			"type": "shell",
 			"command": "pnpm",
       "args": ["-r", "run", "pub:debug"],
 			"isBackground": true,
