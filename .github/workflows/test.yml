@@ -79,7 +79,7 @@ jobs:
         if: ${{ matrix.node-version >= 16 }}
         with:
           cdDir: ./demo/p-workspace
-          cmd: 'pnpm -r publish'
+          cmd: 'npm install -g pnpm && pnpm -r publish'
 
       - name: Tear down containers
         run: |
