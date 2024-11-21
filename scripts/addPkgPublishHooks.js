@@ -1,12 +1,13 @@
-const { PKG_NAME } = require('../lib/constants/var')
 const { jsonReader, jsonWriter } = require('../lib/utils/jsonOp')
 const path = require('path')
 const logger = require('../lib/utils/logger')
-
-const { data: cliPkg } = jsonReader(PKG_NAME)
+const { cliName, PKG_NAME } = require('../runtime')
 
 function suffixCli(postpublish) {
-	return `${postpublish ? `${postpublish} && ` : ``}${cliPkg?.name}`
+	if ((postpublish || '').includes(cliName)) { // 已经包含了
+		return postpublish
+	}
+	return `${postpublish ? `${postpublish} && ` : ``}${cliName}`
 }
 
 function addPkgPublishHooks() {
@@ -19,8 +20,8 @@ function addPkgPublishHooks() {
 	
 	if (!hostPath) {
 		logger.error(`请手动添加指令到项目环境中
-"prepublishOnly": ${cliPkg?.name}
-"postpublish": ${cliPkg?.name}`)
+"prepublishOnly": ${cliName}
+"postpublish": ${cliName}`)
 		return
 	}
 	const pkgPath = path.resolve(hostPath, PKG_NAME)
