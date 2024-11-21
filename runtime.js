@@ -1,8 +1,11 @@
 const path = require('path')
 const { jsonReader } = require('./lib/utils/jsonOp')
 
-exports.PKG_NAME = 'package.json'
+const pkgName = 'package.json'
 
-const { data: cliPkg } = jsonReader(path.resolve(__dirname, PKG_NAME))
+
+const { data: cliPkg } = jsonReader(path.resolve(__dirname, pkgName))
+
+exports.PKG_NAME = pkgName
 exports.cliName = cliPkg?.name
 exports.CACHE_NAME = `.${cliPkg?.name}`
