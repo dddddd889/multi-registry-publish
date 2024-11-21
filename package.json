@@ -23,7 +23,8 @@
   "author": "yhding <yhding9527@hotmail.com>",
   "files": [
     "bin",
-    "lib"
+    "lib",
+    "scripts"
   ],
   "license": "MIT",
   "dependencies": {

@@ -47,4 +47,4 @@ jobs:
       - name: Publish
         run: |
           echo "${{steps.ci_extract_version.outputs.npm_tag}}"
-          npm publish --tag ${{steps.ci_extract_version.outputs.npm_tag}}
+          npm publish --tag ${{steps.ci_extract_version.outputs.npm_tag}} --verbose
