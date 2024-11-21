@@ -5,7 +5,6 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "pub": "node ../../lib/index.js --json",
     "prepublishOnly": "node ../../bin/cli.js",
     "postpublish": "node ../../bin/cli.js"
   },
