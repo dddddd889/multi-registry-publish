@@ -3,8 +3,10 @@ const { jsonReader, jsonWriter } = require('../lib/utils/jsonOp')
 const path = require('path')
 const logger = require('../lib/utils/logger')
 
+const { data: cliPkg } = jsonReader(PKG_NAME)
+
 function suffixCli(postpublish) {
-	return `${postpublish ? `${postpublish} && ` : ``}multi-registry-publish`
+	return `${postpublish ? `${postpublish} && ` : ``}${cliPkg?.name}`
 }
 
 function addPkgPublishHooks() {
@@ -17,8 +19,8 @@ function addPkgPublishHooks() {
 	
 	if (!hostPath) {
 		logger.error(`请手动添加指令到项目环境中
-"prepublishOnly": "multi-registry-publish",
-"postpublish": "multi-registry-publish"`)
+"prepublishOnly": ${cliPkg?.name}
+"postpublish": ${cliPkg?.name}`)
 		return
 	}
 	const pkgPath = path.resolve(hostPath, PKG_NAME)
