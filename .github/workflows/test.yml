@@ -70,6 +70,7 @@ jobs:
 
       - name: 'Public test npm-workspace'
         uses: ./.github/actions/runPub
+        if: ${{ matrix.node-version > 14 }}
         with:
           cdDir: ./demo/npm-workspace
           cmd: 'npm publish --workspaces'
@@ -85,7 +86,6 @@ jobs:
         with:
           cdDir: ./demo/p-workspace
           cmd: 'pnpm -r publish'
-
 
       - name: Tear down containers
         run: |
