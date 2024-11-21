@@ -76,6 +76,7 @@ jobs:
 
       - name: 'Public test pnpm-workspace'
         uses: ./.github/actions/runPub
+        if: ${{ matrix.node-version >= 16 }}
         with:
           cdDir: ./demo/p-workspace
           cmd: 'pnpm -r publish'
