@@ -88,6 +88,7 @@ jobs:
           cmd: 'pnpm -r publish'
 
       - name: 'Public test lerna-workspace'
+        if: ${{ matrix.node-version > 14 }}
         uses: ./.github/actions/runPub
         with:
           cdDir: ./demo/lerna-workspace
