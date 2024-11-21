@@ -27,8 +27,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "libnpmpack": "^8.0.0",
-    "libnpmpublish": "^10.0.0",
     "rc": "^1.2.8"
   }
 }
