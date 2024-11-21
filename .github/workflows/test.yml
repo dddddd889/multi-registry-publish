@@ -77,7 +77,7 @@ jobs:
       # command && echo "Success" || echo "Failed"
       - name: pnpm init
         run: |
-          npm i -g pnpm && pnpm -v && echo "PNPM_VALID=true" >> $GITHUB_STATE
+          npm i -g pnpm && pnpm -v && echo "PNPM_VALID=true" >> $GITHUB_STATE || echo "PNPM_VALID=false" >> $GITHUB_STATE
 
       - name: 'Public test pnpm-workspace'
         uses: ./.github/actions/runPub
