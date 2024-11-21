@@ -1,5 +1,5 @@
-const { jsonReader } = require('../utils/jsonOp')
 const path = require('path')
+const { jsonReader } = require('./lib/utils/jsonOp')
 
 const { data: cliPkg } = jsonReader(path.resolve(__dirname, PKG_NAME))
 
