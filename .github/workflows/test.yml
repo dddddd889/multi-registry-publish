@@ -74,12 +74,19 @@ jobs:
           cdDir: ./demo/npm-workspace
           cmd: 'npm publish --workspaces'
 
+      # command && echo "Success" || echo "Failed"
+      - name: pnpm init
+        run: |
+          npm i -g pnpm
+          pnpm -v && echo "PNPM_VALID=true" >> $GITHUB_STATE
+
       - name: 'Public test pnpm-workspace'
         uses: ./.github/actions/runPub
-        if: ${{ matrix.node-version >= 16 }}
+        if: ${{ env.PNPM_VALID == 'true' }}
         with:
           cdDir: ./demo/p-workspace
-          cmd: 'npm install -g pnpm && pnpm -r publish'
+          cmd: 'pnpm -r publish'
+
 
       - name: Tear down containers
         run: |
