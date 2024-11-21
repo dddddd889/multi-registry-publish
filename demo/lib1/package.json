@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prepublishOnly": "node --inspect-brk ../../bin/cli.js",
-    "postpublish": "node --inspect-brk ../../bin/cli.js"
+    "prepublishOnly": "node ../../bin/cli.js",
+    "postpublish": "node ../../bin/cli.js"
   },
   "keywords": [],
   "publishConfig": [
