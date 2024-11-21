@@ -5,9 +5,11 @@ inputs:
     description: "要跳转的目录"
     required: true
     default: "./demo"
+  cmd:
+    description: "要执行的发布命令"
+    default: "npm publish"
   type:
     description: "要模拟的名称"
-    required: true
     default: "cjs"
 runs:
   using: "composite"
@@ -20,7 +22,7 @@ runs:
         ls -al ~
         cat ~/.npmrc
         docker ps -a
-        node -e "console.log(process.cwd())" & npm publish || exit 1 #  --tag ${{steps.extract_version.outputs.npm_tag}}
+        node -e "console.log(process.cwd())" & bash -c "${{inputs.cmd}}" || exit 1 #  --tag ${{steps.extract_version.outputs.npm_tag}}
       shell: 'bash'
 
     - name: "Docker compose log with  ${{ inputs.type }}"

@@ -68,6 +68,18 @@ jobs:
           cdDir: ./demo/lib2
           type: esm
 
+      - name: 'Public test npm-workspace'
+        uses: ./.github/actions/runPub
+        with:
+          cdDir: ./demo/npm-workspace
+          cmd: 'npm publish --workspaces'
+
+      - name: 'Public test pnpm-workspace'
+        uses: ./.github/actions/runPub
+        with:
+          cdDir: ./demo/p-workspace
+          cmd: 'pnpm -r publish'
+
       - name: Tear down containers
         run: |
           docker-compose -f ${{ inputs.dockerComposeFile }} down # 停止并清理容器

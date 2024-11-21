@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pub": "node ../../../lib/index.js",
-    "pub:debug": "node --inspect-brk=9231 ../../../lib/index.js",
-    "test": "echo app2 && pwd"
+    "test": "echo app2 && pwd",
+    "prepublishOnly": "echo prepublishOnly run && node ../../../bin/cli.js",
+    "postpublish": "echo postpublish run && node ../../../bin/cli.js"
   },
   "keywords": [],
   "author": "",
