@@ -2,9 +2,8 @@
   "name": "lerna-workspace",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "bootstrap": "lerna bootstrap"
-  },
+  "private": true,
+  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC",

@@ -91,7 +91,7 @@ jobs:
         uses: ./.github/actions/runPub
         with:
           cdDir: ./demo/lerna-workspace
-          cmd: 'npm install -g lerna && npm run bootstrap && npx lerna publish --no-git-tag-version --yes --bump patch'
+          cmd: 'npm install -g lerna && npm i && npx lerna publish --no-git-tag-version --yes --bump patch'
 
       - name: Tear down containers
         run: |
