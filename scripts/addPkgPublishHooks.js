@@ -1,4 +1,4 @@
-const { PKG_NAME } = require('../lib/constants/Var')
+const { PKG_NAME } = require('../lib/constants/var')
 const { jsonReader, jsonWriter } = require('../lib/utils/jsonOp')
 const { data: pkg } = jsonReader(PKG_NAME)
 
