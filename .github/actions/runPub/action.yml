@@ -7,7 +7,7 @@ inputs:
     default: "./demo"
   cmd:
     description: "要执行的发布命令"
-    default: "npm publish"
+    default: "npm i && npm publish"
   type:
     description: "要模拟的名称"
     default: "cjs"

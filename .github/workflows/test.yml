@@ -87,6 +87,12 @@ jobs:
           cdDir: ./demo/p-workspace
           cmd: 'pnpm -r publish'
 
+      - name: 'Public test lerna-workspace'
+        uses: ./.github/actions/runPub
+        with:
+          cdDir: ./demo/lerna-workspace
+          cmd: 'npm i pnpm -r publish'
+
       - name: Tear down containers
         run: |
           docker-compose -f ${{ inputs.dockerComposeFile }} down # 停止并清理容器

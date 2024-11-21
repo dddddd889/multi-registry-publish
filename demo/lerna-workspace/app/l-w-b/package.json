@@ -1,0 +1,18 @@
+{
+  "name": "@app/l-w-b",
+  "version": "0.0.7",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo p-w-b && pwd",
+    "prepublishOnly": "echo prepublishOnly run && node ../../../../bin/cli.js",
+    "postpublish": "echo postpublish run && node ../../../../bin/cli.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "gitHead": "842f47f5ec106f3aff0d6c5d7cba166d027b0db9",
+  "publishConfig": {
+    "registry": "http://localhost:4877"
+  }
+}
