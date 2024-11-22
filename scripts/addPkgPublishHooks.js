@@ -30,9 +30,15 @@ function addPkgPublishHooks() {
 		pkg.scripts = {}
 	}
 
-	pkg.scripts.prepublishOnly = suffixCli(pkg?.scripts?.prepublishOnly)
-	pkg.scripts.postpublish = suffixCli(pkg?.scripts?.postpublish)
-	jsonWriter(pkgPath, pkg)
-	logger.info(`写入${pkgPath} prepublishOnly postpublish 钩子成功`)
+	const prepublishOnly = suffixCli(pkg?.scripts?.prepublishOnly)
+	const postpublish = suffixCli(pkg?.scripts?.postpublish)
+	if (prepublishOnly !== pkg?.scripts?.prepublishOnly || postpublish !== pkg?.scripts?.postpublish) {
+		pkg.scripts.prepublishOnly = prepublishOnly
+		pkg.scripts.postpublish = postpublish
+		jsonWriter(pkgPath, pkg)
+		logger.info(`写入${pkgPath} prepublishOnly postpublish 钩子成功`)
+	} else {
+		logger.info(`无需写入${pkgPath} prepublishOnly postpublish 钩子`)
+	}
 }
 addPkgPublishHooks()
