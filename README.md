@@ -10,9 +10,13 @@ npm install multi-registry-publish
 yarn install multi-registry-publish
 ```
 
+注：安转过程中会生成prepublishOnly、postpublish两个钩子
+
 ## 配置
 
-在需要发布的npm包的package.json中配置
+注：不配置才会走默认配置，以下是默认配置。
+
+在需要发布的npm包的package.json中配置，这次默认配置，不配置
 
 ```json5
 {
@@ -27,7 +31,7 @@ yarn install multi-registry-publish
 }
 ```
 
-在script脚本中添加
+默认安装时会触发一次自动注入：
 
 ```json5
 {
@@ -38,7 +42,7 @@ yarn install multi-registry-publish
 }
 ```
 
-> 注：这里的scripts脚本key最好不是hooks钩子(prepublishOnly、publish、postpublish)
+> 注：这里的scripts脚本key最好不使用hooks钩子(prepublishOnly、publish、postpublish)
 
 ### 已经测过发布时的命令行参数
 
