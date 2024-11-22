@@ -40,23 +40,15 @@ yarn install multi-registry-publish
 
 > 注：这里的scripts脚本key最好不是hooks钩子(prepublishOnly、publish、postpublish)
 
-### 指定publish参数
-
-- 方式1
+### 已经测过发布时的命令行参数
 
 ```bash
-{
-  "scripts": {
-    "pub": "multi-registry-publish --tag beta",
-  },
-}
+npm publish --tag beta
 ```
 
-- 方式2
+会向所有镜像站发布指定dist-tag为beta的包
 
-```bash
-npm run pub --tag beta
-```
+目前只测试了`--tag`、`--verbose`能正常被publishConfig里面配置的镜像站共享，其他情况需自行测试
 
 ## 存在的问题
 

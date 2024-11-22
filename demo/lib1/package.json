@@ -8,14 +8,6 @@
     "postpublish": "node ../../bin/cli.js"
   },
   "keywords": [],
-  "publishConfig": [
-    {
-      "registry": "http://localhost:4877"
-    },
-    {
-      "registry": "http://localhost:4878"
-    }
-  ],
   "author": "",
   "license": "ISC"
 }
