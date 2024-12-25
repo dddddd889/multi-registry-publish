@@ -1,11 +1,11 @@
-version: "3.0"
-
 services:
   verdaccio_1:
-    image: verdaccio/verdaccio:5.32.2
+    image: docker.1panel.live/verdaccio/verdaccio:5.32.2
     container_name: verdaccio_1
     environment:
       - DEBUG=*
+    labels:
+      - app=verdaccio
     volumes:
       - ./storage1:/verdaccio/storage
       - ./htpasswd:/verdaccio/htpasswd
@@ -14,10 +14,12 @@ services:
       - "4877:4873"
 
   verdaccio_2:
-    image: verdaccio/verdaccio:5.32.2
+    image: docker.1panel.live/verdaccio/verdaccio:5.32.2
     container_name: verdaccio_2
     environment:
       - DEBUG=*
+    labels:
+      - app=verdaccio
     volumes:
       - ./storage2:/verdaccio/storage
       - ./config.yaml:/verdaccio/conf/config.yaml

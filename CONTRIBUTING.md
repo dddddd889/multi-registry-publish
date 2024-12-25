@@ -28,6 +28,8 @@ docker attach <container id> # 注意这里看不到历史的
 # 或者直接docker descktop查看即可
 ```
 
+podman启动可直接平替docker
+
 登录测试用户
 
 ```bash
