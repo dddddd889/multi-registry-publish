@@ -9,7 +9,7 @@
     "url": "git@github.com:dddddd889/multi-registry-publish.git"
   },
   "scripts": {
-    "postinstall": "node ./scripts/addPkgPublishHooks.js"
+    "postinstall": "IGNORE_INSTALL_INJECT=true node ./scripts/addPkgPublishHooks.js"
   },
   "keywords": [
     "cli",

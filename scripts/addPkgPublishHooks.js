@@ -14,7 +14,7 @@ function addPkgPublishHooks() {
 	logger.info("postinstall in addPkgPublishHooks")
 	const hostPath = process.env.INIT_CWD
 	logger.info(`检查宿主环境为：${hostPath}，当前执行环境为：${process.cwd()}`)
-	if (process.cwd() === hostPath) {
+	if (process.env.IGNORE_INSTALL_INJECT) {
 		return
 	}
 	
